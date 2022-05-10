@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Eventos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>    
+  <ion-card *ngIf="evento">
+    <ion-card-content>
+      <p>Name : {{ evento.name }}</p>
+      <p>Data : {{ evento.date }}</p>
+      <p>Location : {{ evento.location }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
