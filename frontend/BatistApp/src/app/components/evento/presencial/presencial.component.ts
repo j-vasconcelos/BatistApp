@@ -12,21 +12,17 @@ export class PresencialComponent {
 
   @ViewChild(IonDatetime, { static: true }) datetime: IonDatetime;
 
-  dateValue = '';
+  private dateValue: any;
 
   constructor() {}
 
-  formatDate(value: string) {
-    return format(parseISO(value), 'dd/MM/yyyy - HH:mm');
+  get date(): any {
+    return this.dateValue;
   }
-
-  isDateEnabled(dateIsoString: string) {
-    const date = new Date(dateIsoString);
-    if (getDate(date) === 1 && getMonth(date) === 0 && getYear(date) === 2022) {
-      // Disables January 1, 2022.
-      return false;
-    }
-    return true;
+  
+  set date(value: any) {
+    console.log({ value });
+    this.dateValue = value;
   }
 
 }

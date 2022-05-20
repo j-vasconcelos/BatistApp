@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { EventosService } from '../../provider/eventos-service.page';
+import { EventosService } from 'src/app/provider/eventos-service.page';
 
 
 @Component({

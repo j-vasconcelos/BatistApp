@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card (click)="formPresencial()">
     <ion-card-header>
       <ion-title>
         Presencial
@@ -16,7 +16,7 @@
       </ion-title>
     </ion-card-header>
   </ion-card>
-  <ion-card>
+  <ion-card (click)="formOnline()">
     <ion-card-header>
       <ion-title>
         Online
@@ -24,5 +24,9 @@
       </ion-title>
     </ion-card-header>
   </ion-card>
-  <app-presencial></app-presencial>
+
+  <app-presencial *ngIf="isShownPresencial"></app-presencial>
+  <app-online *ngIf="isShownOnline" ></app-online>
+  
+  
 </ion-content>

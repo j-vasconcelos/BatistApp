@@ -1,23 +1,34 @@
 <app-header></app-header>
 
+<ion-toolbar>
+  <ion-searchbar placeholder="Pesquisar"
+                  [(ngModel)]="searchEvent"
+                  showCancelButton="focus"
+                  animated></ion-searchbar>
+</ion-toolbar>
+
 <ion-content>
+  <ion-list>
+    <ion-grid fixed>
+      <ion-row class="ion-align-items-stretch">
+        <ion-col size="12" size-md="6" *ngFor="let devocional of devocionais | filter:searchDevocional">
+          <ion-card class="devocional-card" fullscreen>
+            <img src="./../../assets/img/familia.jpg" onerror="this.src = './../../assets/img/erro-img.png'" routerLink="/app/devocionais/{{devocional.id}}" align="middle">
+            <ion-card-header routerLink="/app/devocionais/{{devocional.id}}">
+              <ion-card-subtitle> {{devocional.dataPostagem}} </ion-card-subtitle>
+              <ion-card-title> {{devocional.tituloDevocional}} </ion-card-title>
+              <ion-card-subtitle> {{devocional.textoVersiculo}} </ion-card-subtitle>
+            </ion-card-header> 
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
 
-  <!-- Fixed Floating Action Button that does not scroll with the content -->
-  <ion-fab slot="fixed">
-    <ion-fab-button>Button</ion-fab-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="dark" routerLink="/app/devocionais/criar-devocional">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
   </ion-fab>
-
-  <!-- Default Floating Action Button that scrolls with the content.-->
-  <ion-fab-button>Default</ion-fab-button>
-
-  <!-- Mini -->
-  <ion-fab-button size="small">Mini</ion-fab-button>
-
-  <!-- Colors -->
-  <ion-fab-button color="primary">Primary</ion-fab-button>
-  <ion-fab-button color="secondary">Secondary</ion-fab-button>
-  <ion-fab-button color="danger">Danger</ion-fab-button>
-  <ion-fab-button color="light">Light</ion-fab-button>
-  <ion-fab-button color="dark">Dark</ion-fab-button>
-
+    
 </ion-content>

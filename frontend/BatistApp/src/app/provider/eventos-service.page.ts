@@ -1,10 +1,20 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Eventos } from '../modal/evento.modal';
 
 @Injectable({ providedIn: 'root'})
 export class EventosService {
+  baseUrl: String = environment.baseUrl;
   eventos: [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  findAll(): Observable<Eventos[]> {
+    const url = `${this.baseUrl}/eventos`;
+    return this.http.get<Eventos[]>(url);
+  }
 
   getEventos() {
     return new Promise((resolve: ({ }) => void, reject) => {

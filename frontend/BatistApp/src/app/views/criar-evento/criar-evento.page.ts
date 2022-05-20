@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CriarEventoPage implements OnInit {
 
-  constructor() { }
+  isShownOnline = false;
+  isShownPresencial = false;
+
+  constructor() {}
 
   ngOnInit() {
   }
 
+  formOnline(){
+    this.isShownOnline = !this.isShownOnline;
+  }
+
+  formPresencial(){
+    this.isShownPresencial = !this.isShownPresencial;
+  }
+  
 }

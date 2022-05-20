@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { CriarEventoPageRoutingModule } from './criar-evento-routing.module';
 
 import { CriarEventoPage } from './criar-evento.page';
+import { OnlineComponent } from 'src/app/components/evento/online/online.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { CriarEventoPage } from './criar-evento.page';
     IonicModule,
     CriarEventoPageRoutingModule
   ],
-  declarations: [CriarEventoPage, PresencialComponent]
+  declarations: [CriarEventoPage, PresencialComponent, OnlineComponent]
 })
 export class CriarEventoPageModule {}

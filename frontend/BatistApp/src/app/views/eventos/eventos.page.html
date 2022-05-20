@@ -46,7 +46,7 @@
       <ion-row class="ion-align-items-stretch">
         <ion-col size="12" size-md="6" *ngFor="let evento of eventos | filter:searchEvent">
           <ion-card class="evento-card" fullscreen>
-            <img src="./../../assets/img/familia.jpg" onerror="this.src = './../../assets/img/erro-img.png'" routerLink="/app/eventos/{{evento.id}}" align="middle">
+            <img class="img-card" src="./../../assets/img/familia.jpg" onerror="this.src = './../../assets/img/erro-img.png'" routerLink="/app/eventos/{{evento.id}}" align="middle">
             <ion-card-header routerLink="/app/eventos/{{evento.id}}">
               <ion-card-subtitle> {{evento.date}} </ion-card-subtitle>
               <ion-card-title> {{evento.name}} </ion-card-title>

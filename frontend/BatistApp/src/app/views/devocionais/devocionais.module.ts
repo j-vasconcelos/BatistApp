@@ -8,13 +8,15 @@ import { DevocionaisPageRoutingModule } from './devocionais-routing.module';
 
 import { DevocionaisPage } from './devocionais.page';
 import { HeaderComponent } from 'src/app/components/header/header.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DevocionaisPageRoutingModule
+    DevocionaisPageRoutingModule,
+    Ng2SearchPipeModule
   ],
   declarations: [DevocionaisPage, HeaderComponent]
 })

@@ -20,6 +20,10 @@ const routes: Routes = [
             loadChildren: () => import('../../views/devocionais/devocionais.module').then(m => m.DevocionaisPageModule)
           },
           {
+            path: 'criar-devocional',
+            loadChildren: () => import('../../views/criar-devocional/criar-devocional.module').then(m => m.CriarDevocionalPageModule)
+          },
+          {
             path: ':id',
             loadChildren: () => import('../../views/devocional/devocional.module').then(m => m.DevocionalPageModule)
           }

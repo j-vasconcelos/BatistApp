@@ -5,5 +5,15 @@
 </ion-header>
 
 <ion-content>
+  <ion-card *ngIf="devocional">
+    <ion-card-content>
+      <p>Name : {{ devocional.tituloDevocional }}</p>
+      <p>Data : {{ devocional.dataPostagem }}</p>
+      <p>Texto : {{ devocional.textoVersiculo }}</p>
 
+      <ion-buttons>
+        <ion-button (click)="deleteDevocional()" fill="clear">Excluir</ion-button>
+      </ion-buttons>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
