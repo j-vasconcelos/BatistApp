@@ -28,11 +28,10 @@ export class CriarDevocionalPage implements OnInit {
   postDevocional(): void {
     this.devocionalService.create(this.devocional).subscribe((resposta) => {
       this.router.navigate(['app/devocionais']);
-      console.log("Devocional criado com sucesso!");
-      //this.devocionalService.mensagem('Devocional criado com sucesso!');
+      this.devocionalService.mensagem('Devocional criado com sucesso!');
     },  err => {
-      //this.devocionalService.mensagem('Validar se todos os campos estão preenchidos corretamente!')
-    });
+      this.devocionalService.mensagem('Validar se todos os campos estão preenchidos corretamente!')
+    }); 
   }
 
   cancel(): void {

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Eventos } from '../modal/evento.modal';
@@ -9,37 +10,47 @@ export class EventosService {
   baseUrl: String = environment.baseUrl;
   eventos: [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public toastController: ToastController) { }
 
   findAll(): Observable<Eventos[]> {
     const url = `${this.baseUrl}/eventos`;
     return this.http.get<Eventos[]>(url);
   }
 
-  getEventos() {
-    return new Promise((resolve: ({ }) => void, reject) => {
-      fetch('./../assets/data/data.json').then(res => res.json())
-        .then((data) => {
-          this.eventos = data.eventos;
-          resolve(this.eventos);
-        }, err => {
-          console.log(err);
-          reject();
-        });
-    });
+  findId(id: Number): Observable<Eventos> {
+    const url = `${this.baseUrl}/eventos/${id}`
+    return this.http.get<Eventos>(url)
   }
 
-  getEvento(id: string) {
-    return new Promise((resolve: ({ }) => void, reject) => {
-      this.eventos.filter((row: any, index: number) => {
-        if (row.id === id) {
-          resolve(row);
+  create(evento): Observable<any>{
+    const url = `${this.baseUrl}eventos`
+    return this.http.post<Eventos>(url, evento);
+  }
+
+  delete(id: Number):Observable<void> {
+    const url = `${this.baseUrl}/eventos/${id}`
+    return this.http.delete<void>(url)
+  }
+
+  update(eventos: Eventos):Observable<void> {
+    const url = `${this.baseUrl}/eventos/${eventos.id}`
+    return this.http.put<void>(url, eventos)
+  }
+
+  async mensagem(str: String) {
+    const toast = await this.toastController.create({
+      message: `${str}`,
+      position: 'top',
+      duration: 4000,
+      buttons: [
+      {
+        text: 'X',
+        role: 'exit',
+        handler: () => {
         }
-        if (this.eventos.length === index + 1) {
-          reject();
-        }
-      });
-    });
+      }]
+    }); 
+    toast.present();
   }
 
 }

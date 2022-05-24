@@ -5,7 +5,7 @@ import { CriarDevocionalPage } from './criar-devocional.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: '', 
     component: CriarDevocionalPage
   }
 ];

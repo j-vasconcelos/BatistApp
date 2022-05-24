@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { EventosService } from '../../provider/eventos-service.page';
 
 @Component({
@@ -8,14 +9,21 @@ import { EventosService } from '../../provider/eventos-service.page';
 })
 export class EventosPage implements OnInit {
 
-  eventos: any;
+  eventos;
   searchEvent: string;
   
-  constructor(private eventoService: EventosService) { }
+  constructor(private eventoService: EventosService, private route:ActivatedRoute) {
+    route.params.subscribe(val => this.findAll())
+  }
 
   ngOnInit() {
-    this.eventoService.getEventos().then(data => {
-      this.eventos = data;
+    this.findAll();
+  }
+
+  findAll() {
+    this.eventoService.findAll().subscribe((resposta) => {
+      console.log(resposta);
+      this.eventos = resposta;    
     });
   }
 

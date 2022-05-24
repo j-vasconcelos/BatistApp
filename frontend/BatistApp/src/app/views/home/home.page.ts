@@ -44,7 +44,7 @@ export class HomePage implements OnInit {
   }
   
   findRecent() {
-    this.devocionalService.findID("1").subscribe((devocional) => {
+    this.devocionalService.findID(1).subscribe((devocional) => {
       this.devocional = devocional;
     });
   }

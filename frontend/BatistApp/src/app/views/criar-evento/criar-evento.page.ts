@@ -9,6 +9,7 @@ export class CriarEventoPage implements OnInit {
 
   isShownOnline = false;
   isShownPresencial = false;
+  isShownButtons = true;
 
   constructor() {}
 
@@ -17,10 +18,16 @@ export class CriarEventoPage implements OnInit {
 
   formOnline(){
     this.isShownOnline = !this.isShownOnline;
+    this.showButtons();
   }
 
   formPresencial(){
     this.isShownPresencial = !this.isShownPresencial;
+    this.showButtons();
+  }
+
+  showButtons(){
+    this.isShownButtons = !this.isShownButtons;
   }
   
 }

@@ -1,0 +1,50 @@
+<ion-card class="ion-no-padding ion-no-margin">
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="floating">Nome do Devocional</ion-label>
+      <ion-input type="text" required
+      id="tituloDevocional"
+      [(ngModel)]="devocional.tituloDevocional"
+      name="tituloDevocional"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Data da Publicação</ion-label>
+      <ion-input type="text" required
+      id="dataPostagem"
+      [(ngModel)]="devocional.dataPostagem"
+      name="dataPostagem"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Hora da Publicação</ion-label>
+      <ion-input type="text" required
+      id="horaPostagem"
+      [(ngModel)]="devocional.horaPostagem"
+      name="horaPostagem"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Texto Biblíco</ion-label>
+      <ion-textarea required
+      id="textoVersiculo"
+      [(ngModel)]="devocional.textoVersiculo"
+      name="textoVersiculo"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Pensamento</ion-label>
+      <ion-textarea required
+      id="textoDevocional"
+      [(ngModel)]="devocional.textoDevocional"
+      name="textoDevocional"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Oração</ion-label>
+      <ion-textarea required
+      id="textoOracao"
+      [(ngModel)]="devocional.textoOracao"
+      name="textoOracao"></ion-textarea>
+    </ion-item>
+    <ion-buttons>
+      <ion-button (click)="cancel()" fill="clear">Cancelar</ion-button>
+      <ion-button (click)="update()" fill="solid">Concluir</ion-button>
+    </ion-buttons>
+  </ion-card-content>
+</ion-card>

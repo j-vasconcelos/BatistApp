@@ -6,10 +6,6 @@ const routes: Routes = [
   {
     path: 'app',
     loadChildren: () => import('./pages/tab/tab.module').then( m => m.TabPageModule)
-  },
-  {
-    path: 'criar-devocional',
-    loadChildren: () => import('./views/criar-devocional/criar-devocional.module').then( m => m.CriarDevocionalPageModule)
   }
 ];
 

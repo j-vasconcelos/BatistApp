@@ -10,9 +10,23 @@
 <ion-content>    
   <ion-card *ngIf="evento">
     <ion-card-content>
-      <p>Name : {{ evento.name }}</p>
-      <p>Data : {{ evento.date }}</p>
-      <p>Location : {{ evento.location }}</p>
+      <p>Name : {{ evento.nome }}</p>
+      <p>Data : {{ evento.data }}</p>
+      <p>Location : {{ evento.local }}</p>
     </ion-card-content>
   </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="pencil-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="deleteEvento()">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="clickEdiar()">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>

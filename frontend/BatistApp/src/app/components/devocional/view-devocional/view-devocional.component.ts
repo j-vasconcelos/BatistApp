@@ -2,34 +2,28 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { DevocionaisService } from 'src/app/provider/devocionais-service.page';
-import { EventosService } from 'src/app/provider/eventos-service.page';
+import { DevocionalPage } from 'src/app/views/devocional/devocional.page';
 
 @Component({
-  selector: 'app-devocional',
-  templateUrl: './devocional.page.html',
-  styleUrls: ['./devocional.page.scss'],
+  selector: 'app-view-devocional',
+  templateUrl: './view-devocional.component.html',
+  styleUrls: ['./view-devocional.component.scss'],
 })
-export class DevocionalPage implements OnInit {
+export class ViewDevocionalComponent implements OnInit {
 
-  isShownEditar = false;
-  isShownView = true;
-
-  id = this.route.snapshot.paramMap.get('id');
-
-  devocional;
   constructor(private route: ActivatedRoute, private router: Router,
-  private devocionalService: DevocionaisService, public alertController: AlertController) {
-    route.params.subscribe(val => this.findId())
-  }
+  private devocionalService: DevocionaisService, public alertController: AlertController, private devocionalPage: DevocionalPage) { }
+
+  id = this.devocionalPage.id;
+  devocional;
 
   ngOnInit() {
     this.findId();
   }
 
   findId(){
-    const devocionalId = this.route.snapshot.paramMap.get('id');
-    if (devocionalId) {
-      this.devocionalService.findID(parseInt(devocionalId)).subscribe((devocional) => {
+    if (this.id) {
+      this.devocionalService.findID(parseInt(this.id)).subscribe((devocional) => {
         this.devocional = devocional;
       });
     }
@@ -53,7 +47,7 @@ export class DevocionalPage implements OnInit {
           text: 'Sim',
           id: 'confirm-button',
           handler: () => {
-            this.devocionalService.delete(this.route.snapshot.paramMap.get('id'))
+            this.devocionalService.delete(this.id)
             .subscribe({
               next: (res) => {
                 //console.log(res);
@@ -70,11 +64,6 @@ export class DevocionalPage implements OnInit {
     });
 
     await alert.present();
-  }
-
-  clickEdiar(){
-    this.isShownEditar = !this.isShownEditar;
-    this.isShownView = !this.isShownView;
   }
 
 }

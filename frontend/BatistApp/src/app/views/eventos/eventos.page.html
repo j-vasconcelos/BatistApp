@@ -39,7 +39,6 @@
                   animated></ion-searchbar>
 </ion-toolbar>
 
-
 <ion-content>
   <ion-list>
     <ion-grid fixed>
@@ -48,9 +47,9 @@
           <ion-card class="evento-card" fullscreen>
             <img class="img-card" src="./../../assets/img/familia.jpg" onerror="this.src = './../../assets/img/erro-img.png'" routerLink="/app/eventos/{{evento.id}}" align="middle">
             <ion-card-header routerLink="/app/eventos/{{evento.id}}">
-              <ion-card-subtitle> {{evento.date}} </ion-card-subtitle>
-              <ion-card-title> {{evento.name}} </ion-card-title>
-              <ion-card-subtitle> {{evento.location}} </ion-card-subtitle>
+              <ion-card-subtitle> {{evento.data}} </ion-card-subtitle>
+              <ion-card-title> {{evento.nome}} </ion-card-title>
+              <ion-card-subtitle> {{evento.local}} </ion-card-subtitle>
             </ion-card-header> 
             <ion-card-content>
               <ion-grid class="ion-no-margin ion-no-padding">
