@@ -1,3 +1,4 @@
+import { EditarEventoComponent } from './../../components/evento/editar-evento/editar-evento.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +16,6 @@ import { EventoPage } from './evento.page';
     IonicModule,
     EventoPageRoutingModule
   ],
-  declarations: [EventoPage]
+  declarations: [EventoPage, EditarEventoComponent]
 })
 export class EventoPageModule {}

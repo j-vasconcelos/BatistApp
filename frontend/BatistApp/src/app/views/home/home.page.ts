@@ -2,6 +2,8 @@ import { Eventos } from './../../modal/evento.modal';
 import { Component, OnInit } from '@angular/core';
 import { DevocionaisService } from 'src/app/provider/devocionais-service.page';
 import { EventosService } from 'src/app/provider/eventos-service.page';
+import { Devocional } from 'src/app/modal/devocional.modal';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -22,30 +24,33 @@ export class HomePage implements OnInit {
     slidesPerView: 2.65,
   };
 
-  devocional;
+  devocionais: Devocional[] = [];
 
   eventos: Eventos[] = [];
 
   today: number = Date.now();
 
   constructor(private devocionalService: DevocionaisService, 
-    private eventoService: EventosService) {}
-
-  ngOnInit(): void {
-    this.findRecent();
-    this.findAll();
+    private eventoService: EventosService, private route: ActivatedRoute) {
+      route.params.subscribe(val => this.ngOnInit())
   }
 
-  findAll() {
+  ngOnInit(): void {
+    this.findAllEvento();
+    this.findAllDevocional();
+  }
+
+  findAllEvento() {
     this.eventoService.findAll().subscribe((resposta) => {
       console.log(resposta);
       this.eventos = resposta;
     });
   }
-  
-  findRecent() {
-    this.devocionalService.findID(1).subscribe((devocional) => {
-      this.devocional = devocional;
+
+  findAllDevocional() {
+    this.devocionalService.findAll().subscribe((resposta) => {
+      console.log(resposta);
+      this.devocionais = resposta;    
     });
   }
 

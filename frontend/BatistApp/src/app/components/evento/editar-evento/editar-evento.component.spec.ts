@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ViewDevocionalComponent } from './view-devocional.component';
+import { EditarEventoComponent } from './editar-evento.component';
 
-describe('ViewDevocionalComponent', () => {
-  let component: ViewDevocionalComponent;
-  let fixture: ComponentFixture<ViewDevocionalComponent>;
+describe('EditarEventoComponent', () => {
+  let component: EditarEventoComponent;
+  let fixture: ComponentFixture<EditarEventoComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewDevocionalComponent ],
+      declarations: [ EditarEventoComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ViewDevocionalComponent);
+    fixture = TestBed.createComponent(EditarEventoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

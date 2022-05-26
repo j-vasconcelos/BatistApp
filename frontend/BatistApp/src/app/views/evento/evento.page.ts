@@ -11,7 +11,12 @@ import { EventosService } from 'src/app/provider/eventos-service.page';
 })
 export class EventoPage implements OnInit {
 
+  isShownEditar = false;
+  isShownView = true;
+
   evento;
+  id = this.route.snapshot.paramMap.get('id');
+
   constructor( private route: ActivatedRoute, private router: Router,
     private eventoService: EventosService, public alertController: AlertController) { }
 
@@ -63,6 +68,11 @@ export class EventoPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  clickEdiar(){
+    this.isShownEditar = !this.isShownEditar;
+    this.isShownView = !this.isShownView;
   }
 
 }

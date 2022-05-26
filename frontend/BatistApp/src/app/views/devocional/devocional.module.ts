@@ -8,7 +8,6 @@ import { DevocionalPageRoutingModule } from './devocional-routing.module';
 
 import { DevocionalPage } from './devocional.page';
 import { EditarDevocionalComponent } from 'src/app/components/devocional/editar-devocional/editar-devocional.component';
-import { ViewDevocionalComponent } from 'src/app/components/devocional/view-devocional/view-devocional.component';
 
 @NgModule({
   imports: [
@@ -17,6 +16,6 @@ import { ViewDevocionalComponent } from 'src/app/components/devocional/view-devo
     IonicModule,
     DevocionalPageRoutingModule
   ],
-  declarations: [DevocionalPage, EditarDevocionalComponent, ViewDevocionalComponent]
+  declarations: [DevocionalPage, EditarDevocionalComponent]
 })
 export class DevocionalPageModule {}
