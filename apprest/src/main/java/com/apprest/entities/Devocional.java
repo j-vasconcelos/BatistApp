@@ -1,18 +1,19 @@
 package com.apprest.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -47,13 +48,13 @@ public class Devocional implements Serializable {
     private String textoOracao;
 
     @NotNull(message = "Campo Data da Postagem é de preencimento obrigatório.")
-    @NotBlank(message = "Campo Titulo Devocional é de preencimento obrigatório.")
     @Column(name = "dt_data_Postagem")
-    private String dataPostagem;
+    @JsonFormat(pattern="dd-MM-yyyy")
+    private Date dataPostagem;
 
     @NotNull(message = "Campo Hora da Postagem é de preencimento obrigatório.")
-    @NotBlank(message = "Campo Titulo Devocional é de preencimento obrigatório.")
     @Column(name = "dt_hora_Postagem")
-    private String horaPostagem;
+    @JsonFormat(pattern="HH:mm:ss")
+    private Date horaPostagem;
     
 }
