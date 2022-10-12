@@ -1,22 +1,25 @@
 <ion-header class="ion-no-border" translucent="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/app/devocional"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding" fullscreen>
   
+  <h1>Criar Devocional</h1>
+
   <form>
     <app-input label="Titulo"></app-input>
     <app-input label="Data de publicação"></app-input>
    <app-input label="Hora"></app-input>
-   <app-textarea label="Texto Bíblico" ></app-textarea>
-   <app-textarea label="pensamento"></app-textarea>
-   <app-textarea class="textarea-oracao" label="Oração" type="textarea"></app-textarea>
-
+   <app-textarea label="Texto Bíblico" cssclass="texto-biblico" ></app-textarea>
+   <app-textarea label="Pensamento" cssclass="pensamento" ></app-textarea>
+   <app-textarea label="Oração" cssclass="oracao"></app-textarea>
+   <app-input label="Imagem" type="file"></app-input> 
+  
    <app-button label='Criar Devocional' type="submit"></app-button>
-   <p class="footer-text"> <a routerLink="/">Cancelar</a> </p>
+   <p class="footer-text"> <a routerLink="/app/devocional">Cancelar</a> </p>
   </form>
 </ion-content>

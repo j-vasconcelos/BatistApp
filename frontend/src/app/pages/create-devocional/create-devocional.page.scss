@@ -4,16 +4,14 @@
   }
 
   ion-toolbar {
-    --ion-toolbar-background: transparent;
-    --ion-color-base: transparent !important;
-
-
+    --ion-toolbar-background: #ffffff !important;
+    --ion-color-base: #ffffff !important;
   }
   
   
   
   h1 {
-    margin-top: 50%;
+    margin-top: 10px;
     margin-bottom: 10px;
     font-size: 32px;
     font-weight: 700;
@@ -25,10 +23,8 @@
   }
   
   form {
-    margin-top: 6rem;
-    
-   
-  
+    margin-top: 3rem;
+     
     app-button {
       display: block;
       margin-top: 3rem;

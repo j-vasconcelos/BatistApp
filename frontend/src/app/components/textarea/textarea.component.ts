@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TextareaComponent {
   @Input() label: string;
+  @Input() cssclass: string;
  
 
   focused: boolean;

@@ -1,4 +1,4 @@
-<div class="form-field {{label}}" >
+<div class="{{cssclass}} form-field" >
   <label [ngClass]="focused ? 'label-focused' : ''">{{label}}</label>
-  <textarea   (focus)="focused = true" (blur)="onBlur($event)"></textarea>
+  <textarea (focus)="focused = true" (blur)="onBlur($event)"></textarea>
 </div>
