@@ -1,7 +1,0 @@
-{
-  "name": "BatistApp",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
