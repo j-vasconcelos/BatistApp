@@ -20,7 +20,7 @@ ion-content {
   }
   
   form {
-    margin-top: 6rem;
+    margin-top: 2rem;
     
     .forgot-password-link {
       text-decoration: none;
@@ -41,7 +41,7 @@ ion-content {
   .footer-text {
     text-align: center;
     font-size: 17px;
-    margin-top: 40%;
+    margin-top: 20%;
   
     a {
       text-decoration: none;
@@ -52,10 +52,9 @@ ion-content {
 
   img{
     position: absolute;
-    width: 214px;
-    height: 119px;
-    left: calc(50% - 224px/2 - 5px);
-    top: 53px;
+    height: 89px;
+    left: calc(50% - 144px/2 - 5px);
+    top: 23px;
 
     mix-blend-mode: hard-light;
 

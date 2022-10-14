@@ -3,7 +3,7 @@
 }
 
 h1 {
-    margin-top: 5px;
+    margin-top: 0px;
     margin-bottom: 10px;
     font-size: 32px;
     font-weight: 600;
@@ -28,6 +28,16 @@ ion-col > div {
     padding: 10px;
 }
 
-#card-recent-content{
-    padding-bottom: 0 !important;
+#card-event-content{
+    padding-top: 0 !important;
 }
+
+ion-card-header{
+    padding-bottom: 5px !important;
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
+  }

@@ -1,48 +1,49 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
+<ion-header class="ion-no-border" translucent="true">
+  <ion-toolbar mode="ios">
+    <div class="titleicon">
+      <img src="./../../assets/img/logo.png" width="60px" style="display:inline-block"/>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-content>
-    <div>
-      <h4 class="ion-padding-horizontal ion-padding-top">Seg, 10 de jul 2022</h4>
-      <h1 class="ion-padding-horizontal">Devocional do dia</h1>
-    </div>
+<ion-content fullscreen>
+  <div class="ion-no-padding">
+    <h4 class="ion-padding-horizontal ion-padding-top">Seg, 10 de jul 2022</h4>
+    <h1 class="ion-padding-horizontal">Devocional do dia</h1>
+  </div>
   
-    <ion-card class="ion-text-start">
-      <div class="ion-no-padding ion-no-margin">
+  <ion-card class="ion-text-start">
+    <div class="ion-no-padding ion-no-margin">
+      <img src="https://ionicframework.com/docs/img/demos/card-media.png">
+      <ion-card-header>
+        <ion-card-title>Título Devocional</ion-card-title>
+        <ion-card-subtitle></ion-card-subtitle>
+      </ion-card-header>
+    </div>
+  </ion-card>
+  
+  <div class="ion-no-padding">
+    <h1 class="ion-padding-horizontal">Principais eventos</h1>
+  </div>
+  
+  <ion-slides>
+    <ion-slide>
+      <ion-card class="ion-text-start">
         <img src="https://ionicframework.com/docs/img/demos/card-media.png">
         <ion-card-header>
-          <ion-card-title>Título Devocional</ion-card-title>
-          <ion-card-subtitle></ion-card-subtitle>
+          <ion-card-subtitle>01/01/1900</ion-card-subtitle>
+          <ion-card-title> Título Evento </ion-card-title>
         </ion-card-header>
-      </div>
-    </ion-card>
-  
-    <div>
-      <h1 class="ion-padding-horizontal">Principais eventos</h1>
-    </div>
-  
-    <ion-slides>
-      <ion-slide>
-        <ion-card class="ion-text-start">
-          <img src="https://ionicframework.com/docs/img/demos/card-media.png">
-          <ion-card-header>
-            <ion-card-subtitle>01/01/1900</ion-card-subtitle>
-            <ion-card-title> Título Evento </ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card class="ion-text-start">
-          <img src="https://ionicframework.com/docs/img/demos/card-media.png">
-          <ion-card-header>
-            <ion-card-subtitle>01/01/1900</ion-card-subtitle>
-            <ion-card-title> Título Evento </ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="ion-text-start">
+        <img src="https://ionicframework.com/docs/img/demos/card-media.png">
+        <ion-card-header>
+          <ion-card-subtitle>01/01/1900</ion-card-subtitle>
+          <ion-card-title> Título Evento </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
