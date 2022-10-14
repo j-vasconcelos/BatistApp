@@ -1,26 +1,28 @@
 <ion-header class="ion-no-border" translucent="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button text="" icon="chevron-back" defaultHref="app/evento"></ion-back-button>
+      <ion-back-button text="" icon="chevron-back" defaultHref="/app/evento"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding" fullscreen>
   
-  <h1>Criar Evento</h1>
+  <div class="ion-no-padding ion-no-margin" *ngIf="isShownButtons">
+    <h1>Criar Evento</h1>
 
-  <form>
-    <app-input label="Nome do Evento*"></app-input>
-    <app-input label="Data Início*"></app-input>
-    <app-input label="Data Fim*"></app-input>
-   <app-input label="Hora Início*"></app-input>
-   <app-input label="Hora Fim*"></app-input>
-   <app-input label="Endereço*" ></app-input>
-   <app-textarea label="Descrição*"  cssclass="oracao"></app-textarea>
-  
+    <ion-card (click)="formPresencial()">
+      <ion-card-header>
+        <ion-card-title> Presencial</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card (click)="formOnline()">
+      <ion-card-header>
+        <ion-card-title> Online</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div> 
 
-   <app-button label='Criar Evento' type="submit"></app-button>
-   <p class="footer-text"> <a routerLink="/">Cancelar</a> </p>
-  </form>
+  <app-form-presencial *ngIf="isShownPresencial"></app-form-presencial>
+  <app-form-online *ngIf="isShownOnline" ></app-form-online>
 </ion-content>
