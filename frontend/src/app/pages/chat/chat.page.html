@@ -1,9 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>chat</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="chevron-back" defaultHref="/app"></ion-back-button>
+    </ion-buttons>
+    <div>
+      <span>Pastor</span>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
 
-</ion-content>
+<ion-footer class="ion-no-border">
+    <ion-toolbar>
+      <ion-row class="ion-align-itens-center">
+        <ion-col size="10">
+          <ion-textarea autoGrow="true" class="message-input" rows="1" maxLength="500"></ion-textarea>
+        </ion-col>
+        <ion-col size="2">
+          <ion-button expand="block" fill="clear" class="msg-btn" routerLink="/app/chat/chat-box">
+            <ion-icon name="send" slot="icon-only"></ion-icon>   
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+</ion-footer>
+
+<ion-tab-bar slot="bottom" #myTabBar id="myTabBar"></ion-tab-bar>

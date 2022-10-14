@@ -1,0 +1,33 @@
+#card-recent{
+    margin-top: 10px !important;
+}
+
+h1 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: 600;
+}
+  
+ion-toolbar {
+    --ion-toolbar-background: #ffffff !important;
+    --ion-color-base: #ffffff !important;
+}
+
+.titleicon {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin-left: 16px;
+}
+
+ion-col > div {
+    background-color: #f7f7f7;
+    border: solid 1px #ddd;
+    padding: 10px;
+}
+
+#card-recent-content{
+    padding-bottom: 0 !important;
+}

@@ -26,7 +26,16 @@ const routes: Routes = [
       },
       {
         path: 'chat',
-        loadChildren: () => import('../../pages/chat/chat.module').then(m => m.ChatPageModule)
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../../pages/chat/chat.module').then(m => m.ChatPageModule)
+          },
+          {
+            path: 'chat-box',
+            loadChildren: () => import('../../pages/chat-box/chat-box.module').then(m => m.ChatBoxPageModule)
+          }
+        ]
       },
       {
         path: 'evento',

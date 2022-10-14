@@ -1,10 +1,34 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>evento</ion-title>
+<ion-header class="ion-no-border" translucent="true">
+  <ion-toolbar mode="ios">
+    <div class="titleicon">
+      <img src="./../../assets/img/logo.png" width="60px" style="display:inline-block"/>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding" fullscreen>
+
+  <h1>Eventos</h1>
+
+  <ion-searchbar  class="ion-no-padding" 
+                  placeholder="Buscar..." 
+                  show-clear-button="focus" 
+                  animated="true"></ion-searchbar>
+
+  <ion-card class="ion-no-margin" id="card-recent">
+    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    <ion-card-header>
+      <ion-card-title>Título Devocional</ion-card-title>
+      <ion-card-subtitle>Hoje | Autor</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content id="card-recent-content">
+      Primeiros 30 caracteres do pensamento...
+    </ion-card-content>
+
+    <ion-button fill="clear" horizontal="end">Participar</ion-button>
+  </ion-card>
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/app/evento/create-evento">
       <ion-icon name="add"></ion-icon>

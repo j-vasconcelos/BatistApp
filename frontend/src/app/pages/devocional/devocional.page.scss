@@ -1,3 +1,7 @@
+#card-recent{
+    margin-top: 10px !important;
+}
+
 h1 {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -5,11 +9,6 @@ h1 {
     font-weight: 700;
 }
   
-ion-card-header.ios {
-    display: flex;
-    flex-flow: column-reverse;
-}
-
 ion-toolbar {
     --ion-toolbar-background: #ffffff !important;
     --ion-color-base: #ffffff !important;
@@ -23,13 +22,8 @@ ion-toolbar {
     margin-left: 16px;
 }
 
-:root {
-    --ion-safe-area-top: 20px;
-    --ion-safe-area-bottom: 22px;
-  }
-
-  ion-col > div {
+ion-col > div {
     background-color: #f7f7f7;
     border: solid 1px #ddd;
     padding: 10px;
-  }
+}
