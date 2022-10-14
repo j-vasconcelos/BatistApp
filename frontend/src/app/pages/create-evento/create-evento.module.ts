@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { CreateEventoPageRoutingModule } from './create-evento-routing.module';
 
 import { CreateEventoPage } from './create-evento.page';
+import { SharedModule } from 'src/app/components/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CreateEventoPageRoutingModule
+    CreateEventoPageRoutingModule,
+    SharedModule
   ],
   declarations: [CreateEventoPage]
 })

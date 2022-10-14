@@ -1,9 +1,26 @@
-<ion-header>
+<ion-header class="ion-no-border" translucent="true">
   <ion-toolbar>
-    <ion-title>create-evento</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="chevron-back" defaultHref="app/evento"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding" fullscreen>
+  
+  <h1>Criar Evento</h1>
 
+  <form>
+    <app-input label="Nome do Evento*"></app-input>
+    <app-input label="Data Início*"></app-input>
+    <app-input label="Data Fim*"></app-input>
+   <app-input label="Hora Início*"></app-input>
+   <app-input label="Hora Fim*"></app-input>
+   <app-input label="Endereço*" ></app-input>
+   <app-textarea label="Descrição*"  cssclass="oracao"></app-textarea>
+  
+
+   <app-button label='Criar Evento' type="submit"></app-button>
+   <p class="footer-text"> <a routerLink="/">Cancelar</a> </p>
+  </form>
 </ion-content>

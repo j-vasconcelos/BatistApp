@@ -30,7 +30,16 @@ const routes: Routes = [
       },
       {
         path: 'evento',
-        loadChildren: () => import('../../pages/evento/evento.module').then(m => m.EventoPageModule)
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../../pages/evento/evento.module').then(m => m.EventoPageModule)
+          },
+          {
+            path: 'create-evento',
+            loadChildren: () => import('../../pages/create-evento/create-evento.module').then(m => m.CreateEventoPageModule)
+          }
+        ]
       },
       {
         path: '',
