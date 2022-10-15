@@ -1,22 +1,21 @@
 <ion-header class="ion-no-border" translucent="true">
-  <ion-toolbar mode="ios">
+  <ion-toolbar>
     <div class="titleicon">
       <img src="./../../assets/img/logo.png" width="60px" style="display:inline-block"/>
     </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding" fullscreen>
+<ion-content fullscreen>
 
-  <h1>Eventos</h1>
+  <div class="ion-padding-horizontal ion-padding-top"><h1>Eventos</h1></div>
 
-  <ion-searchbar  class="ion-no-padding" 
-                  placeholder="Buscar..." 
+  <ion-searchbar  placeholder="Buscar..." 
                   show-clear-button="focus" 
                   animated="true"></ion-searchbar>
 
-  <ion-card class="ion-no-margin" id="card-recent">
-    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+  <ion-card>
+    <img alt="Silhouette of mountains" src="https://placem.at/people?overlay_color=feb75a&w=300&h=144" />
     <ion-card-header>
       <ion-card-subtitle>Sáb. 25 de Jul</ion-card-subtitle>
       <ion-card-subtitle><strong>Título do Evento</strong></ion-card-subtitle>
@@ -28,7 +27,7 @@
   </ion-card>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/app/evento/create-evento">
+    <ion-fab-button routerLink="/app/evento/create-evento" size="small">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

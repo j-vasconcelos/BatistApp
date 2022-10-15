@@ -1,32 +1,4 @@
-.message-input {
-    width: 100%;
-    border: 1px solid var(--ion-color-medium);
-    border-radius: 6px;
-    background: #fff;
-    resize: none;
-    margin-top: 0px;
-    --padding-start: 8px;
-}
-
-.message {
-    padding: 10px !important;
-    border-radius: 10px !important;
-    margin-bottom: 4px !important;
-    white-space: pre-wrap;
-}
-
-.my-message {
-    background: #5240DE;
-    color: #fff;
-}
-
-.other-message {
-    background: #0bbcac;
-    color: #fff;
-}
-
-.time {
-    color: #dfdfdf;
-    float: right;
-    font-size: small;
+.friend {
+    border-bottom: 1px solid #e1e1e1;
+    border-left: 4px solid transparent;
 }

@@ -1,29 +1,27 @@
-<ion-header>
+<ion-header class="ion-no-border" translucent="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button text="" icon="chevron-back" defaultHref="/app"></ion-back-button>
-    </ion-buttons>
-    <div>
-      <span>Pastor</span>
+    <div class="titleicon">
+      <img src="./../../assets/img/logo.png" width="60px" style="display:inline-block"/>
     </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
 
-<ion-footer class="ion-no-border">
-    <ion-toolbar>
-      <ion-row class="ion-align-itens-center">
-        <ion-col size="10">
-          <ion-textarea autoGrow="true" class="message-input" rows="1" maxLength="500"></ion-textarea>
-        </ion-col>
-        <ion-col size="2">
-          <ion-button expand="block" fill="clear" class="msg-btn" routerLink="/app/chat/chat-box">
-            <ion-icon name="send" slot="icon-only"></ion-icon>   
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-toolbar>
-</ion-footer>
+  <div class="friend">
+  <ion-grid routerLink="/app/chat/chat-box">
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="auto">
+        <ion-avatar>
+          <ion-img src="https://cdn.pixabay.com/photo/2017/02/23/13/05/avatar-2092113_1280.png"></ion-img>
+        </ion-avatar>
+      </ion-col>
+      <ion-col>
+        <ion-card-title>Membro</ion-card-title>
+        <ion-card-subtitle>Mensagem...</ion-card-subtitle>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
 
 <ion-tab-bar slot="bottom" #myTabBar id="myTabBar"></ion-tab-bar>
