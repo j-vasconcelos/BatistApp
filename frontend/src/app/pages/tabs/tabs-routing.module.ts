@@ -53,6 +53,10 @@ const routes: Routes = [
             loadChildren: () => import('../../pages/create-evento/create-evento.module').then(m => m.CreateEventoPageModule)
           }
         ]
+      }, 
+      {
+        path: 'menu',
+        loadChildren: () => import('../../pages/menu/menu.module').then(m => m.MenuPageModule)
       },
       {
         path: '',
