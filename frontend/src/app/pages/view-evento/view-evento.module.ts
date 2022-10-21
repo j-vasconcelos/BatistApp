@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ViewEventoPageRoutingModule } from './view-evento-routing.module';
 
 import { ViewEventoPage } from './view-evento.page';
+import { SharedModule } from 'src/app/components/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ViewEventoPageRoutingModule
+    ViewEventoPageRoutingModule,
+    SharedModule
   ],
   declarations: [ViewEventoPage]
 })
