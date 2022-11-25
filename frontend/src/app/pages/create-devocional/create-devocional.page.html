@@ -10,16 +10,42 @@
     
   <h1>Criar Devocional</h1>
 
-  <form>
-    <app-input label="Titulo"></app-input>
-    <app-input label="Data de publicação"></app-input>
-   <app-input label="Hora"></app-input>
-   <app-textarea label="Texto Bíblico" cssclass="texto-biblico" ></app-textarea>
-   <app-textarea label="Pensamento" cssclass="pensamento" ></app-textarea>
-   <app-textarea label="Oração" cssclass="oracao"></app-textarea>
-   <app-input label="Imagem" type="file"></app-input> 
+  <ion-item>
+    <ion-label position="floating">Titulo</ion-label>
+    <ion-input type="text" [(ngModel)]="devocional.devotionalTitle"
+    name="devotionalTitle"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Data de publicação</ion-label>
+    <ion-input type="text" [(ngModel)]="devocional.postDate"
+    name="postDate"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Texto Bíblico</ion-label>
+    <ion-textarea type="text" [(ngModel)]="devocional.textVersicle"
+    name="textVersicle" [autoGrow]="true"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Pensamento</ion-label>
+    <ion-textarea type="text" [(ngModel)]="devocional.devotionalText"
+    name="devotionalText" [autoGrow]="true"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Oração</ion-label>
+    <ion-textarea type="text" [(ngModel)]="devocional.prayerText"
+    name="prayerText" [autoGrow]="true"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Imagem de Capa</ion-label>
+    <ion-input type="file"
+    name="devotionalTitle"></ion-input>
+  </ion-item>
   
-   <app-button label='Criar Devocional' type="submit"></app-button>
-   <p class="footer-text"> <a routerLink="/app/devocional">Cancelar</a> </p>
-  </form>
+  <ion-button expand='block' (click)="create()">Criar Devocional</ion-button>
+  <p class="footer-text"> <a (click)="cancel()">Cancelar</a> </p>
 </ion-content>

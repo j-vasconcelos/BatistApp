@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChatBoxPage } from '../chat-box/chat-box.page';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
@@ -28,19 +29,15 @@ const routes: Routes = [
           }
         ]
       },
-      {
+      /*{
         path: 'chat',
         children: [
           {
             path: '',
             loadChildren: () => import('../../pages/chat/chat.module').then(m => m.ChatPageModule)
-          },
-          {
-            path: 'chat-box',
-            loadChildren: () => import('../../pages/chat-box/chat-box.module').then(m => m.ChatBoxPageModule)
           }
         ]
-      },
+      },*/
       {
         path: 'evento',
         children: [
@@ -68,6 +65,10 @@ const routes: Routes = [
         pathMatch: 'full'
       }
     ]
+  },
+  {
+    path: 'chat/chat-box',
+    component: ChatBoxPage
   }
 ];
 

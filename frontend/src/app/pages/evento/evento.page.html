@@ -12,21 +12,24 @@
 
   <ion-searchbar  placeholder="Buscar..." 
                   show-clear-button="focus" 
-                  animated="true"></ion-searchbar>
+                  animated="true"
+                  [(ngModel)]="filterCards"></ion-searchbar>
 
-  <ion-card routerLink="/app/evento/1">
-    <img alt="Silhouette of mountains" src="https://placem.at/people?overlay_color=feb75a&w=300&h=144" />
-    <ion-card-header>
-      <ion-card-subtitle>Sáb. 25 de Jul</ion-card-subtitle>
-      <ion-card-subtitle><strong>Título do Evento</strong></ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content id="card-event-content">
-      Descrição...
-    </ion-card-content>
+
+  <ion-card class="evento-card" *ngFor="let evento of eventos | filter:filterCards; index as i" fullscreen>
+    <div class="ion-no-padding ion-no-margin" *ngIf="eventos[eventos.length-i-1] as evento">
+      <img class="img-card" src="{{evento.imgURL}}" routerLink="/app/evento/{{evento.id}}" align="middle">
+      <ion-card-header routerLink="/app/evento/{{evento.id}}">
+        <ion-card-subtitle> {{evento.date}} </ion-card-subtitle>
+        <ion-card-title> {{evento.name}} </ion-card-title>
+      </ion-card-header> 
+      <ion-card-content>
+        <ion-card-subtitle> {{evento.place}} </ion-card-subtitle>
+      </ion-card-content>
+    </div>
   </ion-card>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="isShownButtons">
     <ion-fab-button routerLink="/app/evento/create-evento" size="small">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>

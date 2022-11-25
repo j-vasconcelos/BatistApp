@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { EventoPageRoutingModule } from './evento-routing.module';
 
 import { EventoPage } from './evento.page';
+import { LocalDateTimeModule } from 'src/app/pipe/local-date-time.module';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EventoPageRoutingModule
+    EventoPageRoutingModule,
+    LocalDateTimeModule,
+    Ng2SearchPipeModule
   ],
   declarations: [EventoPage]
 })

@@ -45,3 +45,9 @@ ion-card-subtitle{
     margin-right: auto;
     display: block !important;
   }
+
+.img-card{
+    width: 100%;
+    height: 144px; 
+    object-fit: cover;
+}

@@ -8,6 +8,7 @@ import { ViewEventoPageRoutingModule } from './view-evento-routing.module';
 
 import { ViewEventoPage } from './view-evento.page';
 import { SharedModule } from 'src/app/components/shared.module';
+import { LocalDateTimeModule } from 'src/app/pipe/local-date-time.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { SharedModule } from 'src/app/components/shared.module';
     FormsModule,
     IonicModule,
     ViewEventoPageRoutingModule,
-    SharedModule
+    SharedModule,
+    LocalDateTimeModule
   ],
   declarations: [ViewEventoPage]
 })

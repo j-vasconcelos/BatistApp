@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { AuthenticateService } from 'src/app/provider/authenticate.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,7 +10,9 @@ import { AlertController } from '@ionic/angular';
 })
 export class MenuPage implements OnInit {
 
-  constructor(private alertController: AlertController, private router: Router) { }
+  user = this.authenticate.user;
+
+  constructor(private alertController: AlertController, private router: Router, private authenticate: AuthenticateService) { }
 
   ngOnInit() {
   }

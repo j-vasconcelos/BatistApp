@@ -1,0 +1,37 @@
+<ion-content class="ion-padding">
+  
+  <h1>Editar Devocional</h1>
+
+    <ion-item>
+      <ion-label position="floating">Titulo</ion-label>
+      <ion-input type="text" [(ngModel)]="devocional.devotionalTitle"
+      name="devotionalTitle"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Data de publicação</ion-label>
+      <ion-input type="text" [(ngModel)]="devocional.postDate"
+      name="postDate"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Texto Bíblico</ion-label>
+      <ion-textarea type="text" [(ngModel)]="devocional.textVersicle"
+      name="textVersicle" [autoGrow]="true"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Pensamento</ion-label>
+      <ion-textarea type="text" [(ngModel)]="devocional.devotionalText"
+      name="devotionalText" [autoGrow]="true"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Oração</ion-label>
+      <ion-textarea type="text" [(ngModel)]="devocional.prayerText"
+      name="prayerText" [autoGrow]="true"></ion-textarea>
+    </ion-item>
+    
+    <ion-button expand='block' (click)="update()">Editar Devocional</ion-button>
+    <p class="footer-text"> <a (click)="cancel()">Cancelar</a> </p>
+</ion-content>

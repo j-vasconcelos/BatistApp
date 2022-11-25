@@ -12,53 +12,38 @@
 
   <ion-searchbar  placeholder="Buscar..." 
                   show-clear-button="focus" 
-                  animated="true"></ion-searchbar>
+                  animated="true"
+                  [(ngModel)]="filterCards"></ion-searchbar>
 
-  <ion-card routerLink="/app/devocional/1">
-    <img alt="Silhouette of mountains" src="https://placem.at/people?overlay_color=feb75a&w=300&h=144" />
-    <ion-card-header>
-      <ion-card-title>Título Devocional</ion-card-title>
-      <ion-card-subtitle>Hoje</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Primeiros 30 caracteres do pensamento...
-    </ion-card-content>
+  <ion-card routerLink="/app/devocional/{{devocional.id}}" *ngFor="let devocional of devocionais | filter:filterCards; index as i">
+    <div class="ion-no-padding ion-no-margin"><!--</div>  *ngIf="devocionais[devocionais.length-i-1] as devocional">-->
+      <img class="img-card" src="{{devocional.imgURL}}" />
+      <ion-card-header>
+        <ion-card-title>{{devocional.devotionalTitle}}</ion-card-title>
+        <ion-card-subtitle>{{devocional.postDate }}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{devocional.devotionalText}}
+      </ion-card-content>
+    </div>
   </ion-card>
   
-  <ion-grid>
+  <!--<ion-grid>
      <ion-row>
-        <ion-col size="6">
-          <ion-card class="ion-no-margin">
-            <img alt="Silhouette of mountains" src="https://placem.at/people?overlay_color=feb75a&w=145&h=73" />
+        <ion-col size="6" *ngFor="let devocional of devocionais">
+          <ion-card class="ion-no-margin" routerLink="/app/devocional/{{devocional.id}}">
+            <img src="{{devocional.imgURL}}" align="middle">
             <ion-card-header>
-              <ion-card-title>Título Devocional</ion-card-title>
-              <ion-card-subtitle>01/01/1900</ion-card-subtitle>
-            </ion-card-header>
-          </ion-card>
-        </ion-col>
-        <ion-col size="6">
-          <ion-card class="ion-no-margin">
-            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-            <ion-card-header>
-              <ion-card-title>Título Devocional</ion-card-title>
-              <ion-card-subtitle>01/01/1900</ion-card-subtitle>
-            </ion-card-header>
-          </ion-card>
-        </ion-col>
-        <ion-col size="6">
-          <ion-card class="ion-no-margin">
-            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-            <ion-card-header>
-              <ion-card-title>Título Devocional</ion-card-title>
-              <ion-card-subtitle>01/01/1900 | Autor</ion-card-subtitle>
+              <ion-card-title>{{devocional.devotionalTitle}}</ion-card-title>
+              <ion-card-subtitle>{{devocional.postDate | date}}</ion-card-subtitle>
             </ion-card-header>
           </ion-card>
         </ion-col>
       </ion-row>
-  </ion-grid>
+  </ion-grid>-->
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="isShownButtons">
     <ion-fab-button routerLink="/app/devocional/create-devocional" size="small">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>

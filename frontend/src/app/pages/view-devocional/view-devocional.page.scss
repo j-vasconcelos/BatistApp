@@ -5,6 +5,8 @@
 img {
     border-radius: 10px !important;
     width: 100%;
+    max-height: 200px !important;
+    object-fit: cover;
 }
 
 .titulo{

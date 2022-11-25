@@ -8,6 +8,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 import { SharedModule } from 'src/app/components/shared.module';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { SharedModule } from 'src/app/components/shared.module';
     ReactiveFormsModule,
     SharedModule
   ],
-  declarations: [LoginPage]
+  declarations: [LoginPage],
+  providers: [CookieService]
 })
 export class LoginPageModule {}

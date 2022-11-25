@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -7,7 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class InputComponent {
   @Input() label: string;
-  @Input() type = 'text'; // set default type be text
+  @Input() type = 'text';
+  @Output() valueInput = new EventEmitter();
 
   focused: boolean;
 

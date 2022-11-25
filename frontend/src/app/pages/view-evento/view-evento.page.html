@@ -9,20 +9,15 @@
 
 <ion-content fullscreen>
   <div class="class-margin">
-    <img src="https://placem.at/people?overlay_color=feb75a&w=300&h=196">
+    <img class="img-card" src="{{ evento.imgURL }}">
     <div>
-      <h1 class="ion-no-margin">Festa do Pijama</h1>
-      <p>30/09, 20:00 até 29/10, 11:00</p>
-      <p>Rua da Liberdade, 442</p>
-
-      <p>
-        <b>Sobre: </b> Oração...
-      </p>
-
+      <h1 class="ion-no-margin">{{ evento.name }}</h1>
+      <p>Data: {{ evento.date | date}}</p>
+      <p>Local: {{ evento.place }}</p>
     </div>
   </div>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="isShownView && isShownButtons == true">
     <ion-fab-button size="small">
       <ion-icon name="pencil-outline"></ion-icon>
     </ion-fab-button>
@@ -36,5 +31,5 @@
     </ion-fab-list>
   </ion-fab>
 
-  <app-button label='Eu vou' routerLink="/app/evento"></app-button>
+  <ion-button expand='block' (click)="setStatus()">{{status}}</ion-button>
 </ion-content>

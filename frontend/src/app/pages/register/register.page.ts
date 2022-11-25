@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/modal/user';
+import { AuthenticateService } from 'src/app/provider/authenticate.service';
 
 @Component({
   selector: 'app-register',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterPage implements OnInit {
 
-  constructor() { }
+  user: User = {
+    id: 0,
+    username: 'teste',
+    email: 'teste',
+    password: 'teste',
+    adm: false
+}
+
+  constructor(private authenticate: AuthenticateService) { }
 
   ngOnInit() {
   }

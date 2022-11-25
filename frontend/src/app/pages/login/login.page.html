@@ -1,16 +1,25 @@
 <ion-content class="ion-padding">
 
-  <img src="./../../assets/img/logo.png"/>
+  <img src="./../../assets/img/logo.jpeg"/>
 
   <h1>Bem Vindo,</h1>
   <h3>Entre para continuar!</h3>
 
-  <form>
-    <app-input label="Email" type="email"></app-input>
-    <app-input label="Senha" type="password" light></app-input>
-    <a routerLink="#" class="forgot-password-link">Esqueceu a Senha?</a>
+  <form [formGroup]="login">
 
-    <app-button label='Login' type="submit" routerLink="/app"></app-button>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" required formControlName="senha" name="senha"></ion-input>
+    </ion-item>
+    
+    <a class="forgot-password-link" (click)="presentAlert()">Esqueceu a Senha?</a>
+
+    <ion-button expand='block' (click)="logForm()">Entrar</ion-button>
   </form>
 
   <p class="footer-text">Primeiro acesso? <a routerLink="/register">Cadastre-se</a></p>

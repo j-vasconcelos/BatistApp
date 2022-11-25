@@ -4,14 +4,23 @@
   <h3>Presencial</h3>
 
   <form>
-    <app-input label="Nome do Evento*"></app-input>
-    <app-input label="Data Início*"></app-input>
-    <app-input label="Data Fim*"></app-input>
-    <app-input label="Hora Início*"></app-input>
-    <app-input label="Hora Fim*"></app-input>
-    <app-input label="Endereço*" ></app-input>
-    <app-textarea label="Descrição*"  cssclass="oracao"></app-textarea>
-    <app-button label='Criar Evento' type="submit"></app-button>
+    <div class="form-field">
+      <label [ngClass]="focused ? 'label-focused' : ''">Nome do Evento *</label>
+      <input type="text" (focus)="focused = true" (blur)="onBlur($event)" ([ngModel])='evento.name' required/>
+    </div>
+    <div class="form-field"> 
+      <label [ngClass]="focused ? 'label-focused' : ''">Data*</label>
+      <input type="text" (focus)="focused = true" (blur)="onBlur($event)"([ngModel])='evento.date'  required/>
+    </div>
+    <div class="form-field">
+      <label [ngClass]="focused ? 'label-focused' : ''">Local*</label>
+      <input type="text" (focus)="focused = true" (blur)="onBlur($event)" ([ngModel])='evento.place' required/>
+    </div>
+    <div class="form-field">
+      <label [ngClass]="focused ? 'label-focused' : ''">Imagem*</label>
+      <input type="file" (focus)="focused = true" (blur)="onBlur($event)" required/>
+    </div>
+    <ion-button expand='block' (click)="create()"> Criar Evento </ion-button>
     <p class="footer-text"> <a (click)="cancel()">Cancelar</a> </p>
   </form>
 </ion-content>

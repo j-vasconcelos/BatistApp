@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Eventos } from '../../modal/evento.modal';
+import { EventosService } from 'src/app/provider/eventos-service.page';
+import { ActivatedRoute } from '@angular/router';
+import { AuthenticateService } from 'src/app/provider/authenticate.service';
 
 @Component({
   selector: 'app-evento',
@@ -7,9 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventoPage implements OnInit {
 
-  constructor() { }
+  eventos: Eventos[] = [];
 
-  ngOnInit() {
+  isShownButtons = this.authenticate.adm;
+
+  constructor(private eventoService: EventosService, private route: ActivatedRoute, private authenticate: AuthenticateService) { 
+    route.params.subscribe(val => this.findAll())
   }
 
+  ngOnInit(): void {
+    this.findAll();
+  }
+
+  findAll() {
+    this.eventoService.findAll().subscribe((resposta) => {
+      console.log(resposta);
+      this.eventos = resposta;    
+    });
+  }
+
+  
 }

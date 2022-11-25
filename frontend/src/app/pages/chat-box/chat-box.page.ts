@@ -8,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class ChatBoxPage implements OnInit {
 
   constructor() { 
-    
+    let tabs = document.querySelectorAll('.show-tabbar');
+    if (tabs !== null) {
+        Object.keys(tabs).map((key) => {
+            tabs[key].style.display = 'none';
+        });
+    }
   }
 
   ngOnInit() {

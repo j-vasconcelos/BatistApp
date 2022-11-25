@@ -8,37 +8,41 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <div class="class-margin">
-    <img src="https://placem.at/people?overlay_color=feb75a&w=300&h=196">
-    <div>
-      <h1 class="ion-no-margin">Título Devocional</h1>
-      <span>01/01/1900 | Pastor Claudio</span>
-      
-      <ion-card>
-        <p class="versiculo">
-          Versiculo
+  <div class="ion-no-padding ion-no-margin" *ngIf="isShownView">
+    <div class="class-margin">
+      <img src="{{ devocional.imgURL }}">
+      <div>
+        <h1 class="ion-no-margin">{{ devocional.devotionalTitle }}</h1>
+        <span>{{ devocional.postDate}}</span>
+        
+        <ion-card>
+          <p class="versiculo">
+            {{ devocional.textVersicle }}
+          </p>
+        </ion-card>
+        <p class="texto-devocional">
+          {{ devocional.devotionalText }}
         </p>
-      </ion-card>
-      <p class="texto-devocional">
-        Texto Devocional
-      </p>
-      <p>
-        <b>Para Orar: </b> Oração...
-      </p>
+        <p>
+          <b>Para Orar: </b> {{ devocional.prayerText }}
+        </p>
+      </div>
     </div>
   </div>
 
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button size="small">
-        <ion-icon name="pencil-outline"></ion-icon>
+  <app-editar *ngIf="isShownEditar"></app-editar>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="isShownView && isShownButtons == true" >
+    <ion-fab-button size="small">
+      <ion-icon name="pencil-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="delete()">
+        <ion-icon name="trash-outline"></ion-icon>
       </ion-fab-button>
-      <ion-fab-list side="top">
-        <ion-fab-button>
-          <ion-icon name="trash-outline"></ion-icon>
-        </ion-fab-button>
-        <ion-fab-button>
-          <ion-icon name="create-outline"></ion-icon>
-        </ion-fab-button>
-      </ion-fab-list>
-    </ion-fab>
+      <ion-fab-button (click)="clickEditar()">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
