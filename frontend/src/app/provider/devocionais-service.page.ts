@@ -37,6 +37,13 @@ export class DevocionaisService {
     return this.http.put<void>(url, devocional)
   }
 
+  uploadImage(fileUrl: File):Observable<any>{
+    const url = `${this.baseUrl}/api/v1/devocional/image`
+    const formData = new FormData(); 
+    formData.append("file", fileUrl);
+    return this.http.post(url, fileUrl);
+  }
+
   async mensagem(str: String) {
     const toast = await this.toastController.create({
       message: `${str}`,

@@ -4,13 +4,15 @@
     "nome": "Pastor Claudio",
     "email": "pastorclaudio@batistapp.com",
     "senha": "pastor123",
-    "adm": true
+    "adm": true,
+    "imagem": "./../../assets/img/pastor-claudio.png"
   },
   {
     "id": "2",
     "nome": "Renato Joao",
     "email": "renatojoao@batistapp.com",
     "senha": "renato123",
-    "adm": false
+    "adm": false,
+    "imagem": "./../../assets/img/renato-joao.jfif"
   }
 ]

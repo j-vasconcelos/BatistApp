@@ -27,13 +27,20 @@ export class EventosService {
     return this.http.post<Eventos>(url, evento);
   }
 
+  update(evento: Eventos):Observable<void> {
+    const url = `${this.baseUrl}/api/v1/eventos/${evento.id}`
+    return this.http.put<void>(url, evento)
+  }
+
   delete(id: Number):Observable<void> {
-    const url = `${this.baseUrl}/eventos/${id}`
+    const url = `${this.baseUrl}/api/v1/eventos/${id}`
     return this.http.delete<void>(url)
   }
 
   uploadImage(fileUrl){
     const url = `${this.baseUrl}/api/v1/eventos/image`
+    const formData = new FormData(); 
+    formData.append("file", fileUrl, fileUrl.name);
     return this.http.post<Eventos>(url, fileUrl);
   }
 

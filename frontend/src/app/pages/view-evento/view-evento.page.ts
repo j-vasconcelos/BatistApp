@@ -82,13 +82,50 @@ export class ViewEventoPage implements OnInit {
     await alert.present();
   }
 
-  clickEdiar(){
+  clickEditar(){
     this.isShownEditar = !this.isShownEditar;
     this.isShownView = !this.isShownView;
   }
 
   setStatus(){
     this.status = "Inscrito"
+  }
+
+  async delete() {
+    const alert = await this.alertController.create({
+      //cssClass: 'my-custom-class',
+      header: 'Confirmar exclusão!',
+      message: 'Deseja realmente excluir o evento?',
+      buttons: [
+        {
+          text: 'Não',
+          role: 'Não',
+          cssClass: 'secondary',
+          id: 'cancel-button',
+          handler: (blah) => {
+            //console.log('Cancelado');
+          }
+        }, {
+          text: 'Sim',
+          id: 'confirm-button',
+          handler: () => {
+            this.eventoService.delete(this.evento.id!)
+            .subscribe({
+              next: (res) => {
+                //console.log(res);
+                this.router.navigate(['app/evento']);
+                this.eventoService.mensagem('Evento excluído com sucesso!');
+              },
+              error: (e) => {
+                this.eventoService.mensagem('Erro ao excluír, por favor tente novamente!');
+              }
+            });
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
 }

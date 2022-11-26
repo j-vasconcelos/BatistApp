@@ -3,15 +3,29 @@
   <h1>Criar Evento</h1>
   <h3>Online</h3>
 
-  <form>
-    <app-input label="Nome do Evento*"></app-input>
-    <app-input label="Data Início*"></app-input>
-    <app-input label="Data Fim*"></app-input>
-    <app-input label="Hora Início*"></app-input>
-    <app-input label="Hora Fim*"></app-input>
-    <app-input label="Link da Plataforma*" ></app-input>
-    <app-textarea label="Descrição*"  cssclass="oracao"></app-textarea>
-    <app-button label='Criar Evento' type="submit"></app-button>
-    <p class="footer-text"> <a (click)="cancel()">Cancelar</a> </p>
-  </form>
+  <ion-item>
+    <ion-label position="floating">Titulo</ion-label>
+    <ion-input type="text" [(ngModel)]="evento.name"
+    name="name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Data</ion-label>
+    <ion-input type="text" [(ngModel)]="evento.date"
+    name="date" placeholder="Ex. 25/11/2022"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Link do Evento</ion-label>
+    <ion-input type="text" [(ngModel)]="evento.place"
+    name="place"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Imagem de Capa</ion-label>
+    <ion-input type="file" ></ion-input>
+  </ion-item>
+
+  <ion-button expand='block' (click)="create()">Criar Devocional</ion-button>
+  
 </ion-content>

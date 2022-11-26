@@ -9,14 +9,14 @@
     <div class="border-blue">
       <div class="border-white">
         <div class="img-box">
-          <img src="https://placem.at/people?overlay_color=feb75a&w=200&h=200">
+          <img src="{{ imagem }}">
         </div>
       </div>
     </div>
   </div>
 
   <div>
-    <div class="list_div">
+    <div class="list_div" (click)="presentPrompt()">
       <ion-label>Editar Perfil</ion-label>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </div>

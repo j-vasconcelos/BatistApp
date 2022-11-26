@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <div class="class-margin">
+  <div class="class-margin" *ngIf="isShownView">
     <img class="img-card" src="{{ evento.imgURL }}">
     <div>
       <h1 class="ion-no-margin">{{ evento.name }}</h1>
@@ -17,19 +17,21 @@
     </div>
   </div>
 
+  <app-editar *ngIf="isShownEditar"></app-editar>
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="isShownView && isShownButtons == true">
     <ion-fab-button size="small">
       <ion-icon name="pencil-outline"></ion-icon>
     </ion-fab-button>
     <ion-fab-list side="top">
-      <ion-fab-button>
+      <ion-fab-button (click)="delete()">
         <ion-icon name="trash-outline"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button>
+      <ion-fab-button (click)="clickEditar()">
         <ion-icon name="create-outline"></ion-icon>
       </ion-fab-button>
     </ion-fab-list>
   </ion-fab>
 
-  <ion-button expand='block' (click)="setStatus()">{{status}}</ion-button>
+  <ion-button expand='block' (click)="setStatus()" *ngIf="isShownView">{{status}}</ion-button>
 </ion-content>

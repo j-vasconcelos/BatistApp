@@ -55,6 +55,8 @@ export class LoginPage implements OnInit {
             this.authenticate.adm = i.adm;
             this.authenticate.user = i.nome;
             this.authenticate.email = i.email;
+            this.authenticate.imagem = i.imagem;
+            this.authenticate.senha = i.senha;
             this.presentLoading();
         }
       }

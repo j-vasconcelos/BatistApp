@@ -19,14 +19,10 @@ export class CreateDevocionalPage implements OnInit {
     imgURL: 'https://bd-api.s3.sa-east-1.amazonaws.com/1666583398809.jpg',
   }
 
-  focused: boolean;
-
-  onBlur(event: any) {
-    const value = true;
-
-    if (!value) {
-      this.focused = false;
-    }
+  file: File = null;
+  
+  onChange(event) {
+    this.file = event.target.files[0];
   }
 
 
@@ -46,5 +42,14 @@ export class CreateDevocionalPage implements OnInit {
 
   cancel(): void {
     this.router.navigate(['/app/devocional'])
+  }
+
+  teste() {
+    console.log(this.file)
+    this.service.uploadImage(this.file).subscribe((resposta) => {
+      console.log("foi")
+    },  err => {
+      console.log("Erro ao subir a img")
+    });
   }
 }

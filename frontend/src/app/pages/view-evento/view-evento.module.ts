@@ -9,6 +9,7 @@ import { ViewEventoPageRoutingModule } from './view-evento-routing.module';
 import { ViewEventoPage } from './view-evento.page';
 import { SharedModule } from 'src/app/components/shared.module';
 import { LocalDateTimeModule } from 'src/app/pipe/local-date-time.module';
+import { EditarComponent } from 'src/app/components/evento/editar/editar.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { LocalDateTimeModule } from 'src/app/pipe/local-date-time.module';
     SharedModule,
     LocalDateTimeModule
   ],
-  declarations: [ViewEventoPage]
+  declarations: [ViewEventoPage, EditarComponent]
 })
 export class ViewEventoPageModule {}

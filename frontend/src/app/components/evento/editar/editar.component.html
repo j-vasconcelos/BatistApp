@@ -1,3 +1,26 @@
-<p>
-  editar works!
-</p>
+<ion-content class="ion-padding">
+  
+  <h1>Editar Evento</h1>
+
+    <ion-item>
+      <ion-label position="floating">Nome do Evento</ion-label>
+      <ion-input type="text" [(ngModel)]="evento.name"
+      name="devotionalTitle"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Data</ion-label>
+      <ion-input type="text" [(ngModel)]="evento.date"
+      name="postDate"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Local</ion-label>
+      <ion-input type="text" [(ngModel)]="evento.place"
+      name="postDate"></ion-input>
+    </ion-item>
+    
+    <ion-button expand='block' (click)="update()">Editar Devocional</ion-button>
+    <p class="footer-text"> <a (click)="cancel()">Cancelar</a> </p>
+</ion-content>
+

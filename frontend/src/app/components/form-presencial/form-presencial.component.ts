@@ -33,12 +33,13 @@ export class FormPresencialComponent implements OnInit {
   ngOnInit() {}
 
   create(): void {
+    this.evento.name = "(Presencial) " + this.evento.name;
     this.evento.imgURL = "https://bd-api.s3.sa-east-1.amazonaws.com/1667958700321.jpg";
     this.serviceEvento.createEvent(this.evento).subscribe((resposta) => {
       this.router.navigate(['app/eventos'])
-      //this.serviceEvento.mensagem('Evento criado com sucesso!');
+      this.serviceEvento.mensagem('Evento criado com sucesso!');
     }, err => {
-      //this.serviceEvento.mensagem('Validar se todos os campos estão preenchidos corretamente!')
+      this.serviceEvento.mensagem('Validar se todos os campos estão preenchidos corretamente!')
     });
   }
 

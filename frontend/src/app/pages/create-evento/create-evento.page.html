@@ -8,21 +8,39 @@
 
 <ion-content class="ion-padding" fullscreen>
   
-  <div class="ion-no-padding ion-no-margin" *ngIf="isShownButtons">
-    <h1>Criar Evento</h1>
+  <h1>Criar Evento</h1>
 
-    <ion-card (click)="formPresencial()">
-      <ion-card-header>
-        <ion-card-title> Presencial</ion-card-title>
-      </ion-card-header>
-    </ion-card>
-    <ion-card (click)="formOnline()">
-      <ion-card-header>
-        <ion-card-title> Online</ion-card-title>
-      </ion-card-header>
-    </ion-card>
-  </div> 
+  <ion-item>
+    <ion-label position="floating">Tipo</ion-label>
+    <ion-select placeholder="Seleciona o tipo de evento" (ionChange)="countryChange($event)">
+      <ion-select-option value="presencial">Presencial</ion-select-option>
+      <ion-select-option value="online">Online</ion-select-option>
+    </ion-select>
+  </ion-item>
 
-  <app-form-presencial *ngIf="isShownPresencial"></app-form-presencial>
-  <app-form-online *ngIf="isShownOnline" ></app-form-online>
+  <ion-item>
+    <ion-label position="floating">Titulo</ion-label>
+    <ion-input type="text" [(ngModel)]="evento.name"
+    name="name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Data</ion-label>
+    <ion-input type="text" [(ngModel)]="evento.date"
+    name="date" placeholder="Ex. 25/11/2022"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Link do Evento</ion-label>
+    <ion-input type="text" [(ngModel)]="evento.place"
+    name="place"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Imagem de Capa</ion-label>
+    <ion-input type="file" ></ion-input>
+  </ion-item>
+
+  <ion-button expand='block' (click)="create()">Criar Evento</ion-button>
+  
 </ion-content>

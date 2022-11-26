@@ -3,5 +3,6 @@
     username: string;
     email: string;
     password: string;
-    adm: boolean
+    adm: boolean;
+    imagem: string;
 }

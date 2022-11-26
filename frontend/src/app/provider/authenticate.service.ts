@@ -9,6 +9,8 @@ export class AuthenticateService {
   adm: boolean;
   user: string;
   email: string;
+  imagem: string;
+  senha: string;
 
   constructor() { }
 

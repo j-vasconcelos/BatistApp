@@ -3,25 +3,30 @@
   <h1>Criar Evento</h1>
   <h3>Presencial</h3>
 
-  <form>
-    <div class="form-field">
-      <label [ngClass]="focused ? 'label-focused' : ''">Nome do Evento *</label>
-      <input type="text" (focus)="focused = true" (blur)="onBlur($event)" ([ngModel])='evento.name' required/>
-    </div>
-    <div class="form-field"> 
-      <label [ngClass]="focused ? 'label-focused' : ''">Data*</label>
-      <input type="text" (focus)="focused = true" (blur)="onBlur($event)"([ngModel])='evento.date'  required/>
-    </div>
-    <div class="form-field">
-      <label [ngClass]="focused ? 'label-focused' : ''">Local*</label>
-      <input type="text" (focus)="focused = true" (blur)="onBlur($event)" ([ngModel])='evento.place' required/>
-    </div>
-    <div class="form-field">
-      <label [ngClass]="focused ? 'label-focused' : ''">Imagem*</label>
-      <input type="file" (focus)="focused = true" (blur)="onBlur($event)" required/>
-    </div>
-    <ion-button expand='block' (click)="create()"> Criar Evento </ion-button>
-    <p class="footer-text"> <a (click)="cancel()">Cancelar</a> </p>
-  </form>
+  <ion-item>
+    <ion-label position="floating">Titulo</ion-label>
+    <ion-input type="text" [(ngModel)]="evento.name"
+    name="name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Data</ion-label>
+    <ion-input type="text" [(ngModel)]="evento.date"
+    name="date" placeholder="Ex. 25/11/2022"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Endereço</ion-label>
+    <ion-input type="text" [(ngModel)]="evento.place"
+    name="place"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Imagem de Capa</ion-label>
+    <ion-input type="file" ></ion-input>
+  </ion-item>
+
+  <ion-button expand='block' (click)="create()">Criar Devocional</ion-button>
+
 </ion-content>
 

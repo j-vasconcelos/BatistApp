@@ -9,6 +9,7 @@ import { DevocionaisService } from 'src/app/provider/devocionais-service.page';
 import { EventosService } from 'src/app/provider/eventos-service.page';
 
 import SwiperCore, { Pagination } from "swiper";
+import Swiper from 'swiper';
 
 SwiperCore.use([Pagination]);
 

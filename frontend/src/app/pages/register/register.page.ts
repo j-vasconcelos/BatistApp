@@ -14,7 +14,8 @@ export class RegisterPage implements OnInit {
     username: 'teste',
     email: 'teste',
     password: 'teste',
-    adm: false
+    adm: false,
+    imagem: "./../../assets/img/logo.jpeg"
 }
 
   constructor(private authenticate: AuthenticateService) { }
