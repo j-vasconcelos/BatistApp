@@ -55,4 +55,8 @@ export class EditarComponent implements OnInit {
       }
       
     }
+
+    cancel(): void{
+      this.vieweventopage.clickEditar();
+    }
 }

@@ -41,7 +41,11 @@ export class DevocionaisService {
     const url = `${this.baseUrl}/api/v1/devocional/image`
     const formData = new FormData(); 
     formData.append("file", fileUrl);
-    return this.http.post(url, fileUrl);
+    return this.http.post(url, fileUrl, {
+      headers: {
+        'Content-Type': 'file'
+      },
+    });
   }
 
   async mensagem(str: String) {

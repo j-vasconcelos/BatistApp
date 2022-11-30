@@ -30,15 +30,15 @@ export class CreateEventoPage implements OnInit {
   ngOnInit() {}
 
   create(): void {
-    if(this.tipo = "online"){
+    if(this.tipo == "online"){
       this.evento.name = "(Online) " + this.evento.name;
-    }else if(this.tipo = "presencial"){
+    }else if(this.tipo == "presencial"){
       this.evento.name = "(Presencial) " + this.evento.name;
     }
 
     if(this.evento.name != "" && this.evento.date != "" 
       && this.evento.place != ""){
-        this.evento.imgURL = "https://bd-api.s3.sa-east-1.amazonaws.com/1667958700321.jpg";
+        this.evento.imgURL = "https://bd-api.s3.sa-east-1.amazonaws.com/1669765125795.jfif";
         this.serviceEvento.createEvent(this.evento).subscribe((resposta) => {
           this.router.navigate(['app/evento'])
           this.serviceEvento.mensagem('Evento criado com sucesso!');

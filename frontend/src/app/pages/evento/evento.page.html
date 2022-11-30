@@ -16,8 +16,8 @@
                   [(ngModel)]="filterCards"></ion-searchbar>
 
 
-  <ion-card class="evento-card" *ngFor="let evento of eventos | filter:filterCards; index as i" fullscreen>
-    <div class="ion-no-padding ion-no-margin" *ngIf="eventos[eventos.length-i-1] as evento">
+  <ion-card class="evento-card" *ngFor="let evento of eventos | filter:filterCards" fullscreen>
+    <div class="ion-no-padding ion-no-margin">
       <img class="img-card" src="{{evento.imgURL}}" routerLink="/app/evento/{{evento.id}}" align="middle">
       <ion-card-header routerLink="/app/evento/{{evento.id}}">
         <ion-card-subtitle> {{evento.date}} </ion-card-subtitle>

@@ -16,7 +16,7 @@ export class CreateDevocionalPage implements OnInit {
     devotionalText: '',
     prayerText: '',
     postDate: '', 
-    imgURL: 'https://bd-api.s3.sa-east-1.amazonaws.com/1666583398809.jpg',
+    imgURL: 'https://bd-api.s3.sa-east-1.amazonaws.com/1669764649012.jpg',
   }
 
   file: File = null;

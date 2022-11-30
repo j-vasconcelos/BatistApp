@@ -31,7 +31,7 @@
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating">Link do Evento</ion-label>
+    <ion-label position="floating">Local</ion-label>
     <ion-input type="text" [(ngModel)]="evento.place"
     name="place"></ion-input>
   </ion-item>
@@ -42,5 +42,6 @@
   </ion-item>
 
   <ion-button expand='block' (click)="create()">Criar Evento</ion-button>
+  <p class="footer-text"> <a (click)="cancel()">Cancelar</a> </p>
   
 </ion-content>
